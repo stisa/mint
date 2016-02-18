@@ -85,7 +85,7 @@ class List extends Control {
         item.destroy();
 
         for (it in i...items.length) {
-          items[it].y_local -= dy;// items[it].y_local ;
+          items[it].y_local -= dy;
         }
 
 
