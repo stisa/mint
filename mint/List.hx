@@ -67,6 +67,30 @@ class List extends Control {
 
     } //add_item
 
+   public function remove_item( item:Control ) {
+
+        var i : Int = items.indexOf(item);
+        var dy : Float = 0;
+        if(items[i+1]!=null){
+          dy = items[i+1].y_local-item.y_local;
+        }
+
+        item.onmouseup.remove(item_mousedown);
+        item.onmouseenter.remove(item_mouseenter);
+        item.onmouseleave.remove(item_mouseleave);
+
+        items.remove(item);
+        view.remove(item);
+
+        item.destroy();
+
+        for (it in i...items.length) {
+          items[it].y_local -= dy;// items[it].y_local ;
+        }
+
+
+   } //remove_item
+
     function item_mouseenter(event:MouseEvent, ctrl:Control ) {
         var idx = items.indexOf(ctrl);
         onitementer.emit(idx, ctrl, event);
