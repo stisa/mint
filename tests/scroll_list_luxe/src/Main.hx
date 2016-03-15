@@ -67,7 +67,7 @@ class Main extends luxe.Game {
               label: { color:new Color().rgb(0x06b4fb) },
               close_button: { color:new Color().rgb(0x06b4fb) },
           },
-          x:320, y:0, w:320, h: 640,
+          x:320, y:0, w:320, h: 480,
           w_min: 256, h_min:256,
           collapsible:true
       });
@@ -76,7 +76,7 @@ class Main extends luxe.Game {
           parent: itemW,
           name: 'itemList',
           options: { view: { color:new Color().rgb(0x19191c) } },
-          x: 5, y: 37, w: 310, h: 640,
+          x: 5, y: 37, w: 310, h: 480,
       });
     } //create_plus_window
 
@@ -86,10 +86,10 @@ class Main extends luxe.Game {
       var _item = new mint.Label({
           parent: list,
           name: '${list.name}_${idx}',
-          x:5, y:2, w:310, h:32,
+          x:5, y:2, w:300, h:32,
           text_size: 22,
           align: TextAlign.center, align_vertical: TextAlign.center, bounds_wrap: true,
-          text: "click me to remove",
+          text: '${idx}, click to remove',
           onclick: function(e,c) { list.remove_item(c); }
       });
 
